@@ -18,7 +18,13 @@ function CharacterListScreen() {
         <S.Header>
           <strong>10 characters</strong>
         </S.Header>
-        <Card/>
+
+        <S.CardContainer>
+          <Card/>
+          <Card/>
+          <Card/>
+          <Card/>
+        </S.CardContainer>
       </S.Container>
     </>
   );

@@ -24,3 +24,11 @@ export const Header = styled.header`
     font-size: 24px;
   }
 `;
+
+export const CardContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  margin-bottom: 15px;
+`;

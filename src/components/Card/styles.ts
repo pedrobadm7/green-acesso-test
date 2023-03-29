@@ -6,9 +6,7 @@ export const CardContainer = styled.div`
     background-color: ${theme.colors.primary.white};
     display: flex;
     flex-direction: row;
-    width: 100%;
-    max-width: 50%;
-    min-width: 35rem;
+    margin: 5px;
     box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.04);
     border-radius: ${theme.font.sizes.xxxsmall};
   `}
