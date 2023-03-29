@@ -1,47 +1,46 @@
-
 export interface Themes {
   font: {
     family: {
-      roboto: string
-    },
+      roboto: string;
+    };
     sizes: {
-      xxxxsmall: string,
-      xxxsmall: string,
-      xxsmall: string,
-      xsmall: string,
-      small: string,
-      medium: string,
-      large: string,
-      xlarge: string,
-      xxlarge: string,
-      xxxlarge: string
-    }
-  },
-  colors:  {
-    background: string,
+      xxxxsmall: string;
+      xxxsmall: string;
+      xxsmall: string;
+      xsmall: string;
+      small: string;
+      medium: string;
+      large: string;
+      xlarge: string;
+      xxlarge: string;
+      xxxlarge: string;
+    };
+  };
+  colors: {
+    background: string;
     primary: {
-      lighter: string,
-      light: string,
-      main: string,
-      dark: string
-    },
+      lighter: string;
+      light: string;
+      main: string;
+      dark: string;
+    };
     gray: {
-      900: string,
-      200: string,
-      100: string,
-    },
+      900: string;
+      200: string;
+      100: string;
+    };
     danger: {
-      light: string,
-      main: string,
-      dark: string
-    }
-  }
+      light: string;
+      main: string;
+      dark: string;
+    };
+  };
 }
 
 export default {
   font: {
     family: {
-      roboto: 'Roboto, sans-serif'
+      roboto: 'Roboto, sans-serif',
     },
     sizes: {
       xxxxsmall: '0.8rem',
@@ -53,8 +52,8 @@ export default {
       large: '1.8rem',
       xlarge: '2.2rem',
       xxlarge: '2.4rem',
-      xxxlarge: '3.2rem'
-    }
+      xxxlarge: '3.2rem',
+    },
   },
   colors: {
     background: '#F6F5FC',

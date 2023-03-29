@@ -1,4 +1,5 @@
-import { createGlobalStyle, DefaultTheme } from 'styled-components';
+/* eslint-disable indent */
+import { createGlobalStyle } from 'styled-components';
 import { Themes } from './themes/themes';
 
 export default createGlobalStyle`
@@ -14,9 +15,10 @@ export default createGlobalStyle`
     }
 
     body {
-        background-color: ${({ theme }: {theme: Themes}) => theme.colors.background};
-        font-size: ${({theme}: {theme: Themes}) => theme.font.sizes.medium};
-        color: ${({ theme }: {theme: Themes}) => theme.colors.gray[900]}
+        background-color: ${({ theme }: { theme: Themes }) =>
+          theme.colors.background};
+        font-size: ${({ theme }: { theme: Themes }) => theme.font.sizes.medium};
+        color: ${({ theme }: { theme: Themes }) => theme.colors.gray[900]}
     }
 
     button {
