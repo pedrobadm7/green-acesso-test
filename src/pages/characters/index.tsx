@@ -1,3 +1,4 @@
+import Card from '@/components/Card';
 import InputSearch from '@/components/InputSearch';
 import Head from 'next/head';
 
@@ -17,6 +18,7 @@ function CharacterListScreen() {
         <S.Header>
           <strong>10 characters</strong>
         </S.Header>
+        <Card/>
       </S.Container>
     </>
   );

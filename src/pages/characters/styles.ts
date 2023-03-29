@@ -2,6 +2,12 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   margin-top: 32px;
+
+  @media (max-width: 904px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Header = styled.header`

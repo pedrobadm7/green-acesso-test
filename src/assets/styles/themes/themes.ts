@@ -23,6 +23,7 @@ export interface Themes {
       light: string;
       main: string;
       dark: string;
+      white: string;
     };
     gray: {
       900: string;
@@ -62,6 +63,7 @@ export default {
       light: '#6674F4',
       main: '#5061FC',
       dark: '#3346F0',
+      white: '#FFFFFF',
     },
     gray: {
       900: '#222222',
