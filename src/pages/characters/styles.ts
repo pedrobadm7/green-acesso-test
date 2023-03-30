@@ -12,14 +12,19 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.header`
-  padding: 0 0 0 10rem;
-  margin-top: 3.2rem;
-  margin-bottom: 3.2rem;
-  border-bottom: 2px solid ${({ theme }) => theme.colors.gray[100]};
+  ${({ theme }: { theme: Themes }) => css`
+    padding: 0 0 0 10rem;
+    margin: ${theme.font.sizes.xxxlarge} 0;
+    border-bottom: 0.2rem solid ${({ theme }) => theme.colors.gray[100]};
 
-  strong {
-    font-size: 2.4rem;
-  }
+    strong {
+      font-size: ${theme.font.sizes.xxlarge};
+    }
+
+    @media (max-width: 904px) {
+      padding: 0;
+    }
+  `}
 `;
 
 export const CardContainer = styled.div`
@@ -27,7 +32,6 @@ export const CardContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 15px;
 `;
 
 export const ImageContainer = styled.div`
@@ -41,6 +45,7 @@ export const ImageContainer = styled.div`
   @media (max-width: 904px ) {
     display: flex;
     justify-content: center;
+    margin: auto;
   }
 `;
 
@@ -56,19 +61,22 @@ export const InfoContainer = styled.div`
 
 export const InfoBox = styled.div`
   display: flex;
-
+  flex-direction: column;
   justify-content: space-between;
 `;
 
 export const Info = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  justify-content: flex-start;
+  ${({ theme }: { theme: Themes }) => css`
+    display: flex;
+    align-items: center;
+    gap: ${theme.font.sizes.xxxsmall};
+    justify-content: flex-start;
+    padding: ${theme.font.sizes.xxxsmall};
+  `}
 
   @media (max-width: 904px) {
     ${({ theme }: { theme: Themes }) => css`
-      padding: ${theme.font.sizes.xxlarge};
+      padding: ${theme.font.sizes.medium};
     `}
   }
 `;

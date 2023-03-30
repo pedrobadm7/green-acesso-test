@@ -9,6 +9,8 @@ import { ICharacter } from '@/types/characters';
 
 function CharacterListScreen() {
   const [charactersList, setCharactersList] = useState<ICharacter[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
     fetchCharacters();
@@ -42,8 +44,8 @@ function CharacterListScreen() {
                 <Image
                   src={character.image}
                   alt="Picture of the author"
-                  width={150}
-                  height={150}
+                  width={400}
+                  height={400}
                 />
               </S.ImageContainer>
               <S.InfoContainer>
@@ -56,8 +58,6 @@ function CharacterListScreen() {
                     <strong> Status: </strong>
                     <label>{character.status}</label>
                   </S.Info>
-                </S.InfoBox>
-                <S.InfoBox>
                   <S.Info>
                     <strong>Specie: </strong>
                     {character.species}
@@ -66,8 +66,6 @@ function CharacterListScreen() {
                     <strong> Type: </strong>
                     {character.type ? character.type : 'No type'}
                   </S.Info>
-                </S.InfoBox>
-                <S.InfoBox>
                   <S.Info>
                     <strong> Origin: </strong>
                     {character.species}
