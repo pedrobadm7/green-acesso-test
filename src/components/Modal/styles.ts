@@ -47,16 +47,11 @@ export const CloseButton = styled.button`
   border: none;
   width: 4rem;
   height: 4rem;
-
-  background-color: #f7f9fc;
 `;
+
 export const Content = styled.div`
   padding: 1rem;
   overflow-x: hidden;
   overflow-y: auto;
   width: 40rem;
-
-  /* @media (max-width: 360px) {
-    width: 80vw;
-  } */
 `;
