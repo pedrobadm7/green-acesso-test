@@ -67,6 +67,11 @@ export const StatusAndSpecies = styled.div`
       margin-bottom: 0.6rem;
       margin-right: 1rem;
       padding: 0.5rem;
+
+      &:hover {
+        background-color: ${theme.colors.primary.dark};
+        color: ${theme.colors.primary.white};
+      }
     }
   `}
 `;

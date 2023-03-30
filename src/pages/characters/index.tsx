@@ -1,27 +1,14 @@
-import { useEffect, useState } from 'react';
 import Card from '@/components/Card';
 import InputSearch from '@/components/InputSearch';
-import Image from 'next/image';
 import Head from 'next/head';
 import * as S from './styles';
 import { api } from '@/services/api';
 import { ICharacter } from '@/types/characters';
+import { useQuery } from '@tanstack/react-query';
 
 function CharacterListScreen() {
-  const [charactersList, setCharactersList] = useState<ICharacter[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
 
-  useEffect(() => {
-    fetchCharacters();
-  }, []);
-
-  async function fetchCharacters() {
-    const response = await api.getCharacters();
-    const characters = response.results;
-    setCharactersList(characters);
-
-  }
+  const {data: characters} = useQuery({queryKey: ['todos'], queryFn: api.getCharacters});
 
   return (
     <>
@@ -38,7 +25,7 @@ function CharacterListScreen() {
         </S.Header>
 
         <S.CardContainer>
-          {charactersList.map((character) => (
+          {characters?.results.map((character: ICharacter) => (
             <Card key={character.id} character={character}/>
           ))}
         </S.CardContainer>
