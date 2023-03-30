@@ -54,6 +54,7 @@ export const Content = styled.div`
   padding: 1rem;
   overflow-x: hidden;
   overflow-y: auto;
+  width: 40rem;
 
   /* @media (max-width: 360px) {
     width: 80vw;
