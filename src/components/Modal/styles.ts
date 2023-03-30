@@ -1,3 +1,4 @@
+import { Themes } from '@/assets/styles/themes/themes';
 import styled from 'styled-components';
 export const Wrapper = styled.div`
   position: fixed;
@@ -25,38 +26,32 @@ export const StyledModal = styled.div`
   border-radius: 20px;
 `;
 export const Header = styled.div`
-  background-color: #efefef;
-  height: 50px;
-  border-radius: 8px 8px 0 0;
+  background-color: ${({ theme }: { theme: Themes }) =>
+    theme.colors.background};
+  height: 5rem;
+  border-radius: 0.8rem 0.8rem 0 0;
   display: flex;
   justify-content: space-between;
   padding: 0.3rem;
 `;
 export const HeaderText = styled.div`
-  color: #fff;
   align-self: center;
-  color: lightgray;
 `;
 export const CloseButton = styled.button`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   cursor: pointer;
   background-color: #efefef;
   border: none;
+  width: 40px;
+  height: 40px;
 
-  img {
-    border: 2px solid #8f9bb3;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    padding: 5px;
-    background-color: #f7f9fc;
-  }
+  background-color: #f7f9fc;
 `;
 export const Content = styled.div`
   padding: 10px;
-  max-height: 30rem;
+
   overflow-x: hidden;
   overflow-y: auto;
   width: 30vw;

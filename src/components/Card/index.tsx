@@ -23,7 +23,7 @@ function Card({character}: {character: ICharacter}) {
         </S.CharacterModalInfos>
       </S.ModalContainer>
       <S.CharactersModalStats>
-        <span><b>Gender:</b> {character.gender}</span>
+        <span>Gender: {character.gender}</span>
         <span>Location: {character.location.name}</span>
         <span>Origin: {character.origin.name}</span>
         <span>Status: {character.status}</span>
