@@ -31,52 +31,15 @@ function CharacterListScreen() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <S.Container>
-        <InputSearch />
         <S.Header>
-          <strong>{charactersList.length} characters</strong>
+          <InputSearch />
         </S.Header>
 
         <S.CardContainer>
           {charactersList.map((character) => (
-            <Card key={character.id}>
-              <S.ImageContainer>
-                <Image
-                  src={character.image}
-                  alt="Picture of the author"
-                  width={400}
-                  height={400}
-                />
-              </S.ImageContainer>
-              <S.InfoContainer>
-                <S.InfoBox>
-                  <S.Info>
-                    <strong> Name: </strong>
-                    <label>{character.name}</label>
-                  </S.Info>
-                  <S.Info>
-                    <strong> Status: </strong>
-                    <label>{character.status}</label>
-                  </S.Info>
-                  <S.Info>
-                    <strong>Specie: </strong>
-                    {character.species}
-                  </S.Info>
-                  <S.Info>
-                    <strong> Type: </strong>
-                    {character.type ? character.type : 'No type'}
-                  </S.Info>
-                  <S.Info>
-                    <strong> Origin: </strong>
-                    {character.species}
-                  </S.Info>
-                  <S.Info>
-                    <strong> Gender: </strong>
-                    {character.gender}
-                  </S.Info>
-                </S.InfoBox>
-              </S.InfoContainer>
-            </Card>
+            <Card key={character.id} character={character}/>
           ))}
         </S.CardContainer>
       </S.Container>
