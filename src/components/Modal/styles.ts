@@ -42,21 +42,20 @@ export const CloseButton = styled.button`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background-color: #efefef;
+  background-color: ${({ theme }: { theme: Themes }) =>
+    theme.colors.background};
   border: none;
-  width: 40px;
-  height: 40px;
+  width: 4rem;
+  height: 4rem;
 
   background-color: #f7f9fc;
 `;
 export const Content = styled.div`
-  padding: 10px;
-
+  padding: 1rem;
   overflow-x: hidden;
   overflow-y: auto;
-  width: 30vw;
 
-  @media (max-width: 360px) {
+  /* @media (max-width: 360px) {
     width: 80vw;
-  }
+  } */
 `;
