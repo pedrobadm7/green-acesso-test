@@ -1,11 +1,26 @@
+import { useEffect, useState } from 'react';
 import Card from '@/components/Card';
 import InputSearch from '@/components/InputSearch';
 import Image from 'next/image';
 import Head from 'next/head';
-import mockImg from '../../assets/images/demolay.png';
 import * as S from './styles';
+import { api } from '@/services/api';
+import { ICharacter } from '@/types/characters';
 
 function CharacterListScreen() {
+  const [charactersList, setCharactersList] = useState<ICharacter[]>([]);
+
+  useEffect(() => {
+    fetchCharacters();
+  }, []);
+
+  async function fetchCharacters() {
+    const response = await api.getCharacters();
+    const characters = response.results;
+    setCharactersList(characters);
+
+  }
+
   return (
     <>
       <Head>
@@ -17,52 +32,54 @@ function CharacterListScreen() {
       <S.Container>
         <InputSearch />
         <S.Header>
-          <strong>10 characters</strong>
+          <strong>{charactersList.length} characters</strong>
         </S.Header>
 
         <S.CardContainer>
-          <Card>
-            <S.ImageContainer>
-              <Image
-                src={mockImg}
-                alt="Picture of the author"
-                width={150}
-                height={150}
-              />
-            </S.ImageContainer>
-            <S.InfoContainer>
-              <S.InfoBox>
-                <S.Info>
-                  <strong> Name: </strong>
-           Rick
-                </S.Info>
-                <S.Info>
-                  <strong> Status: </strong>
-          Alive
-                </S.Info>
-              </S.InfoBox>
-              <S.InfoBox>
-                <S.Info>
-                  <strong>Specie: </strong>
-          Human
-                </S.Info>
-                <S.Info>
-                  <strong> Type: </strong>
-          White
-                </S.Info>
-              </S.InfoBox>
-              <S.InfoBox>
-                <S.Info>
-                  <strong> Origin: </strong>
-           USA
-                </S.Info>
-                <S.Info>
-                  <strong> Gender: </strong>
-          Man
-                </S.Info>
-              </S.InfoBox>
-            </S.InfoContainer>
-          </Card>
+          {charactersList.map((character) => (
+            <Card key={character.id}>
+              <S.ImageContainer>
+                <Image
+                  src={character.image}
+                  alt="Picture of the author"
+                  width={150}
+                  height={150}
+                />
+              </S.ImageContainer>
+              <S.InfoContainer>
+                <S.InfoBox>
+                  <S.Info>
+                    <strong> Name: </strong>
+                    <label>{character.name}</label>
+                  </S.Info>
+                  <S.Info>
+                    <strong> Status: </strong>
+                    <label>{character.status}</label>
+                  </S.Info>
+                </S.InfoBox>
+                <S.InfoBox>
+                  <S.Info>
+                    <strong>Specie: </strong>
+                    {character.species}
+                  </S.Info>
+                  <S.Info>
+                    <strong> Type: </strong>
+                    {character.type ? character.type : 'No type'}
+                  </S.Info>
+                </S.InfoBox>
+                <S.InfoBox>
+                  <S.Info>
+                    <strong> Origin: </strong>
+                    {character.species}
+                  </S.Info>
+                  <S.Info>
+                    <strong> Gender: </strong>
+                    {character.gender}
+                  </S.Info>
+                </S.InfoBox>
+              </S.InfoContainer>
+            </Card>
+          ))}
         </S.CardContainer>
       </S.Container>
     </>

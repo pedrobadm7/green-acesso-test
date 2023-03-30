@@ -12,17 +12,13 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 32px;
-  margin-bottom: 32px;
+  padding: 0 0 0 10rem;
+  margin-top: 3.2rem;
+  margin-bottom: 3.2rem;
   border-bottom: 2px solid ${({ theme }) => theme.colors.gray[100]};
-  padding-bottom: 16px;
 
   strong {
-    color: #222;
-    font-size: 24px;
+    font-size: 2.4rem;
   }
 `;
 
@@ -30,7 +26,7 @@ export const CardContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
+  justify-content: center;
   margin-bottom: 15px;
 `;
 
@@ -50,17 +46,17 @@ export const ImageContainer = styled.div`
 
 export const InfoContainer = styled.div`
   ${({ theme }: { theme: Themes }) => css`
-    width: 100%;
     display: flex;
     flex-direction: column;
-
     justify-content: space-around;
-    padding: ${theme.font.sizes.xlarge};
+    width: 100%;
+    padding: ${theme.font.sizes.xxxlarge};
   `}
 `;
 
 export const InfoBox = styled.div`
   display: flex;
+
   justify-content: space-between;
 `;
 

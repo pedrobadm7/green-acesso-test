@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components';
 
 export const CardContainer = styled.div`
   ${({ theme }: { theme: Themes }) => css`
+    width: 100%;
+    max-width: 55rem;
     background-color: ${theme.colors.primary.white};
     display: flex;
     flex-direction: row;
