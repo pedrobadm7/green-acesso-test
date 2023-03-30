@@ -1,7 +1,8 @@
 import Card from '@/components/Card';
 import InputSearch from '@/components/InputSearch';
+import Image from 'next/image';
 import Head from 'next/head';
-
+import mockImg from '../../assets/images/demolay.png';
 import * as S from './styles';
 
 function CharacterListScreen() {
@@ -20,10 +21,48 @@ function CharacterListScreen() {
         </S.Header>
 
         <S.CardContainer>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
+          <Card>
+            <S.ImageContainer>
+              <Image
+                src={mockImg}
+                alt="Picture of the author"
+                width={150}
+                height={150}
+              />
+            </S.ImageContainer>
+            <S.InfoContainer>
+              <S.InfoBox>
+                <S.Info>
+                  <strong> Name: </strong>
+           Rick
+                </S.Info>
+                <S.Info>
+                  <strong> Status: </strong>
+          Alive
+                </S.Info>
+              </S.InfoBox>
+              <S.InfoBox>
+                <S.Info>
+                  <strong>Specie: </strong>
+          Human
+                </S.Info>
+                <S.Info>
+                  <strong> Type: </strong>
+          White
+                </S.Info>
+              </S.InfoBox>
+              <S.InfoBox>
+                <S.Info>
+                  <strong> Origin: </strong>
+           USA
+                </S.Info>
+                <S.Info>
+                  <strong> Gender: </strong>
+          Man
+                </S.Info>
+              </S.InfoBox>
+            </S.InfoContainer>
+          </Card>
         </S.CardContainer>
       </S.Container>
     </>
