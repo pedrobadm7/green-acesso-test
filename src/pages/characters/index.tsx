@@ -5,11 +5,14 @@ import * as S from './styles';
 import { api } from '@/services/api';
 import { ICharacter } from '@/types/characters';
 import { useQuery } from '@tanstack/react-query';
+import { useEffect } from 'react';
 
 function CharacterListScreen() {
 
   const {data: characters} = useQuery({queryKey: ['todos'], queryFn: api.getCharacters});
-
+  useEffect(() => {
+    console.log(characters);
+  }, []);
   return (
     <>
       <Head>

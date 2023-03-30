@@ -9,6 +9,7 @@ import * as S from './styles';
 const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps }: AppProps) {
+
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={themes}>

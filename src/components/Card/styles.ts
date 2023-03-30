@@ -75,3 +75,58 @@ export const StatusAndSpecies = styled.div`
     }
   `}
 `;
+export const ModalContainer = styled.div`
+  display: flex;
+`;
+
+export const CharacterModalInfos = styled.div`
+  width: 80%;
+  padding-left: 16px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  p {
+    font-family: Roboto;
+    font-size: 26px;
+    color: #262835;
+    font-weight: bold;
+    margin: 8px 0;
+  }
+
+  h1 {
+    font-size: 18px;
+    color: rgba(23, 23, 27, 0.6);
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #262835;
+    font-size: 20px;
+    border-radius: 32px;
+    margin-bottom: 6px;
+    margin-right: 10px;
+    padding: 5px;
+  }
+`;
+
+export const CharactersModalStats = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0 0 10px;
+
+  span {
+    background-color: #efefef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #262835;
+    font-size: 12px;
+    border-radius: 32px;
+    margin-bottom: 6px;
+    margin-right: 10px;
+    padding: 5px;
+  }
+`;
